@@ -12,7 +12,11 @@ import os
 # os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY"
 
 # 使用一个固定的模型
-MODEL = ChatOpenAI(model="gpt-4o", temperature=0.1)
+MODEL = ChatOpenAI(
+    model="deepseek-ai/DeepSeek-R1-0528-Qwen3-8B",  
+    openai_api_key="sk-cvamswnmgapnlfeymnmjszhdgoibpevkpdzgrteqnebamdbj",
+    openai_api_base="https://api.siliconflow.cn/v1" 
+    )
 
 # --- A. 初步分析节点 ---
 def initial_analysis_node(state: AuditState) -> AuditState:
