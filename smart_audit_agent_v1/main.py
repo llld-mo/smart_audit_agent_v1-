@@ -22,7 +22,7 @@ contract VulnerableContract {
         
         balances[msg.sender] -= amount; // 余额更新在外部调用之前
         
-        (bool success, ) = msg.sender.call{value: amount}(""); // 外部调用
+        (bool success, ) = msg.sender.call{{value: amount}}(""); // 外部调用
         require(success, "Transfer failed");
         
         // 余额更新应该在这里：balances[msg.sender] -= amount; 
